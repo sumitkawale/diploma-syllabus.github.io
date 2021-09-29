@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Title</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+        .btnOutline {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.3rem;
+            border: 2.5px solid #333;
+            padding: 0.5rem 1rem;
+            font-family: 'Ubuntu';
+            border-radius: 2.5px;
+            transition: all 250ms;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            text-align: center;
+            background: #00000011;
+            width: 100%;
+
+        }
+
+        .btnOutline:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .btnOutline:focus {
+            outline: none;
+            box-shadow: 0 0 0.5px 2.5px #333333aa;
+        }
+
+        .btnOutline:active {
+            background-color: #000;
+        }
+
+        .btnOutline .ripple {
+            position: absolute;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: ripple 1500ms;
+            border-radius: 10% 50%;
+            border-radius: 50% 10%;
+        }
+
+        @keyframes ripple-r {
+            from {
+                width: 0px;
+                height: 0px;
+                opacity: 0.5;
+            }
+
+            to {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes ripple {
+            from {
+                width: 0px;
+                height: 0px;
+                opacity: 0.5;
+            }
+
+            to {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5 mb-5 pb-5">
+        <hr>
+        <a href="./media/I-Scheme 2nd Sem-Comp.pdf">
+            <button type="button" class="btnOutline">Computer Engineering <br> 2nd Semester ( I Scheme )</button>
+        </a>
+        <hr>
+        <a href="./media/I-Scheme 3rd Sem-Comp.pdf">
+            <button type="button" class="btnOutline">Computer Engineering <br> 3rd Semester ( I Scheme )</button>
+        </a>
+        <hr>
+        <a href="./media/I-Scheme 4th Sem-Comp.pdf">
+            <button type="button" class="btnOutline">Computer Engineering <br> 4th Semester ( I Scheme )</button>
+        </a>
+        <hr>
+        <a href="./media/I-Scheme 5th Sem-Comp.pdf">
+            <button type="button" class="btnOutline">Computer Engineering <br> 5th Semester ( I Scheme )</button>
+        </a>
+        <hr>
+        <a href="./media/I-Scheme 6th Sem-Comp.pdf">
+            <button type="button" class="btnOutline">Computer Engineering <br> 6th Semester ( I Scheme )</button>
+        </a>
+        <hr>
+    </div>
+
+    <script>
+        "use strict"
+        window.onload = function () {
+            let btns = document.getElementsByClassName("btnOutline");
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].onmouseover = ripple;
+                btns[i].onclick = ripple;
+            }
+
+            function ripple(event) {
+                let ripple = document.createElement('span')
+                ripple.style.top = (event.clientY - this.offsetTop) + "px";
+                ripple.style.left = (event.clientX - this.offsetLeft) + "px";
+                ripple.classList.add("ripple");
+
+                this.append(ripple)
+
+                setTimeout(() => ripple.remove(), 5000)
+            }
+        }()
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
